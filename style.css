@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
   --main-brown: #915321;
   --dark-brown: #5d3f27;
@@ -14,10 +15,15 @@
   --skill-bg: #f3e9e1;
   --footer-bg: #fae8da;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: Arial, sans-serif;
   background-color: var(--light-beige);
-  color: rgb(93, 63, 39);
+  color: var(--dark-brown);
 }
 
 header {
@@ -61,6 +67,7 @@ nav a:hover {
   color: var(--hover-brown);
   text-decoration: none;
 }
+
 main {
   width: 80%;
   max-width: 900px;
@@ -91,6 +98,7 @@ h2 {
   text-align: center;
   transition: color 0.3s ease;
 }
+
 h2:hover {
   color: var(--hover-brown);
 }
@@ -100,6 +108,7 @@ main p {
   line-height: 1.6;
   font-size: 18px;
 }
+
 .skills-list {
   list-style: none;
   padding: 0;
@@ -112,12 +121,16 @@ main p {
   padding: 8px;
   width: 60%;
   border-radius: 15px;
-  transition: transform 0.3s ease, background-color 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    background-color 0.3s ease;
 }
+
 .skills-list li:hover {
   background-color: var(--header-bg);
   transform: translateY(-3px);
 }
+
 a {
   color: var(--main-brown);
   text-decoration: none;
@@ -138,14 +151,24 @@ a:hover {
   color: white;
   text-decoration: none;
   border-radius: 16px;
-  transition: color 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .btn:hover {
   background-color: var(--hover-brown);
   text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   transform: translateY(-2px);
 }
+
+.btn:focus {
+  outline: 3px solid var(--hover-brown);
+  outline-offset: 3px;
+}
+
 footer {
   background-color: var(--footer-bg);
   color: var(--main-brown);
@@ -154,15 +177,17 @@ footer {
   margin-top: 20px;
   border-top: 2px solid var(--main-brown);
 }
+
 @media (max-width: 600px) {
   header {
     flex-direction: column;
-    padding: 20px 10px;
-    gap: 15px;
+    padding: 25px 15px;
+    gap: 20px;
+    text-align: center;
   }
 
   header h1 {
-    font-size: 26px;
+    font-size: 24px;
   }
 
   .profile-info {
@@ -171,16 +196,18 @@ footer {
 
   .profile-info p {
     text-align: center;
+    font-size: 16px;
   }
 
   nav {
     width: 100%;
-    padding: 10px;
+    padding: 5px;
   }
 
   nav a {
     display: block;
-    margin: 10px 0;
+    margin: 12px 0;
+    font-size: 17px;
   }
 
   main {
@@ -189,23 +216,30 @@ footer {
   }
 
   section {
-    padding: 15px;
+    padding: 20px 15px;
+    margin-bottom: 15px;
   }
 
-  img {
+  .profile-img {
     width: 120px;
     height: 120px;
   }
 
-  p {
+  main p {
     font-size: 16px;
   }
 
-  ul li {
+  .skills-list li {
     width: 90%;
+    padding: 10px;
   }
 
   .btn {
-    padding: 10px 15px;
+    padding: 12px 20px;
+  }
+
+  footer {
+    padding: 15px;
+    font-size: 14px;
   }
 }
