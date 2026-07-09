@@ -3,23 +3,35 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+  --main-brown: #915321;
+  --dark-brown: #5d3f27;
+  --hover-brown: #ab6b37;
+  --light-beige: #faf1e6;
+  --header-bg: #faddc5;
+  --nav-bg: #fae8da;
+  --section-bg: #f9f4ed;
+  --skill-bg: #f3e9e1;
+  --footer-bg: #fae8da;
+}
 body {
   font-family: Arial, sans-serif;
-  background-color: #faf1e6;
+  background-color: var(--light-beige);
   color: rgb(93, 63, 39);
 }
 
 header {
-  background-color: rgb(250, 221, 197);
-  color: rgb(145, 83, 33);
+  background-color: var(--header-bg);
+  color: var(--main-brown);
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 25px 60px;
+  transition: color 0.3s ease;
 }
 
 header h1:hover {
-  color: rgb(171, 107, 55);
+  color: var(--hover-brown);
 }
 
 .profile-info {
@@ -37,15 +49,16 @@ nav {
 }
 
 nav a {
-  color: rgb(145, 83, 33);
+  color: var(--main-brown);
   text-decoration: none;
   font-weight: bold;
   margin: 0 10px;
   font-size: 18px;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
-  color: rgb(171, 107, 55);
+  color: var(--hover-brown);
   text-decoration: none;
 }
 main {
@@ -56,53 +69,60 @@ main {
 }
 
 section {
-  background-color: #f9f4ed;
+  background-color: var(--section-bg);
   margin-bottom: 20px;
   padding: 25px;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-img {
+.profile-img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
   display: block;
   margin: 0 auto 15px auto;
   object-fit: cover;
-  border: 3px solid rgb(145, 83, 33);
+  border: 3px solid var(--main-brown);
 }
 
 h2 {
-  color: rgb(145, 83, 33);
+  color: var(--main-brown);
   text-align: center;
+  transition: color 0.3s ease;
 }
 h2:hover {
-  color: rgb(171, 107, 55);
+  color: var(--hover-brown);
 }
 
-p {
+main p {
   text-align: center;
   line-height: 1.6;
   font-size: 18px;
 }
-ul {
+.skills-list {
   list-style: none;
   padding: 0;
   text-align: center;
 }
 
-ul li {
-  background-color: #f3e9e1;
+.skills-list li {
+  background-color: var(--skill-bg);
   margin: 8px auto;
   padding: 8px;
   width: 60%;
   border-radius: 15px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+.skills-list li:hover {
+  background-color: var(--header-bg);
+  transform: translateY(-3px);
 }
 a {
-  color: rgb(145, 83, 33);
+  color: var(--main-brown);
   text-decoration: none;
   font-weight: bold;
+  transition: color 0.3s ease;
 }
 
 a:hover {
@@ -114,23 +134,25 @@ a:hover {
   width: fit-content;
   margin: 15px auto 0 auto;
   padding: 12px 22px;
-  background-color: rgb(145, 83, 33);
+  background-color: var(--main-brown);
   color: white;
   text-decoration: none;
   border-radius: 16px;
+  transition: color 0.3s ease;
 }
 
 .btn:hover {
-  background-color: rgb(137, 89, 50);
+  background-color: var(--hover-brown);
   text-decoration: none;
+  transform: translateY(-2px);
 }
 footer {
-  background-color: rgb(250, 232, 218);
-  color: rgb(93, 63, 39);
+  background-color: var(--footer-bg);
+  color: var(--main-brown);
   text-align: center;
   padding: 20px;
   margin-top: 20px;
-  border-top: 2px solid rgb(174, 140, 112);
+  border-top: 2px solid var(--main-brown);
 }
 @media (max-width: 600px) {
   header {
